@@ -1,0 +1,504 @@
+/* Global Style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'cairo-bold';
+    outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Body */
+body {
+    direction: rtl;
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+/* Lists */
+ul,
+li {
+    list-style: none;
+}
+
+/* Container */
+.container {
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+/* Sections */
+section {
+    padding: 70px 0;
+}
+
+section h3 {
+    font-size: 30px;
+    text-align: center;
+    color: #43a047;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+section h3::after,
+section h3::before {
+    content: "";
+    position: absolute;
+    background-color: #43a047;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section h3::after {
+    width: 50px;
+    bottom: -10px;
+}
+
+section h3::before {
+    width: 100px;
+    bottom: 0px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: .5s all ease-in-out;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: #fff;
+    transition: .5s all ease-in-out;
+    z-index: -1;
+}
+
+.header.active {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+header.active .container {
+    height: 80px;
+}
+
+.header ul {
+    display: flex;
+}
+
+.header ul li {
+    position: relative;
+    cursor: pointer;
+}
+
+.header ul li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    height: 2px;
+    transition: .3s all ease-in-out;
+}
+
+.header li.active::after,
+.header li:hover::after {
+    width: 100%;
+}
+
+.header .bars {
+    display: none;
+}
+
+.header li:not(:first-of-type),
+.header li:not(:last-of-type) {
+    margin: 0 15px;
+}
+
+.header .logo {
+    font-family: 'thuluth-decorated';
+    font-size: 55px;
+    cursor: pointer;
+}
+
+/* Main Section */
+.main {
+    background: url(2.jpg) center center/cover no-repeat;
+    padding: 0;
+}
+
+.main .container {
+    min-height: 100vh;
+}
+
+.main .title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.main .title h2 {
+    line-height: 1.9;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.title .btn {
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .3s all ease-in-out;
+    padding: 5px 15px;
+}
+
+.title .btn i {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.title .btn::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    transition: .3s all ease-in-out;
+    background: transparent;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.title .btn:hover {
+    color: #232323;
+}
+
+.title .btn:hover::after {
+    width: 100%;
+}
+
+/* Hadith Section */
+.hadithContainer {
+    min-height: 350px;
+    position: relative;
+    box-shadow: 4px 4px 4px 0 #d1d9e6 inset, -4px -4px 4px 0px #d1d9e6 inset;
+    color: #232323;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    padding-top: 70px;
+    font-size : 13px;
+}
+
+.hadith .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hadith .buttons div {
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14) inset, 0 7px 10px -5px rgba(76, 175, 88, .4);
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.hadith .buttons .number {
+    padding: 10px 20px;
+    color: #43a047;
+    background: transparent;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(76, 175, 88, .4);
+}
+
+.surahsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.surahsContainer .surah {
+    min-height: 100px;
+    min-width: 150px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+    margin-bottom: 8px;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    color: #232323;
+    font-size: 17px;
+}
+
+.surahsContainer .surah:hover {
+    transform: scale(1.05);
+}
+
+.surah-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+    overflow-y: scroll;
+    transform: translateX(100%);
+}
+
+.surah-popup.active {
+    transform: translateX(0);
+    transition: .7s transform all ease-in-out;
+}
+
+.surah-popup::-webkit-scrollbar {
+    width: 10px;
+    background-color: #43a047;
+}
+
+.surah-popup ::-webkit-scrollbar-thumb {
+    background-color: #43a047;
+}
+
+.close-popup {
+    position: sticky;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    color: #121212;
+    cursor: pointer;
+}
+
+.surah-popup .ayat {
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    margin-right: 40px;
+    color: #121212;
+    text-align: center;
+}
+
+.surah-popup .ayat p {
+    line-height: 2;
+    width: 100%;
+    border-bottom: 2px solid #43a047;
+    margin-bottom: 10px;
+    font-family: 'Amiri', Arial, sans-serif;
+    font-size: 22px;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 1080px) {
+    section h3 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .header .container {
+        height: 60px;
+    }
+
+    .header li:not(:first-of-type),
+    .header li:not(:last-of-type) {
+        margin: 0 10px;
+    }
+
+    .header .logo {
+        font-size: 40px;
+    }
+
+    .title .btn {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .title .btn i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .surahsContainer .surah {
+        min-height: 80px;
+        min-width: 120px;
+        font-size: 14px;
+    }
+}
+
+/* Styles for all devices */
+.prayer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    font-size : 13px;
+}
+
+.prayer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    font-size : 13px;
+}
+
+.prayer-item:hover {
+    background-color: #e5e5e5;
+}
+
+.prayer-item .time {
+    font-size: 20px;
+    font-weight: bold;
+    color: #43a047;
+}
+
+.prayer-item .name {
+    font-size: 18px;
+    color: #232323;
+}
+
+/* Styles specific to mobile devices */
+@media only screen and (max-width: 600px) {
+    .prayer-list {
+        margin-top: 10px;
+    }
+
+    .prayer-item {
+        padding: 10px;
+    }
+
+    .prayer-item .time {
+        font-size: 16px;
+    }
+
+    .prayer-item .name {
+        font-size: 14px;
+    }
+}
+
+.scrollBtn{
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #43a047;
+    border-radius: 50%;
+    font-size: 25px;
+    transition: 1s bottom ease-in-out;
+    bottom: -50px;
+}
+
+.scrollBtn.active{
+    bottom: 20px;
+}
+
+.footer{
+    padding: 0;
+}
+
+.footer svg {
+    fill: #43a047;
+    transform: translateY(10px);
+}
+
+.footer .social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #43a047;
+    color: #fff;
+}
+
+.footer .social a{
+    margin: 15px;
+    font-size: 35px;
+    color: #fff;
+}
+
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 1080px) {
+    /* Add your mobile styles here */
+    /* For example, adjust the font sizes, margins, paddings, etc. */;
+        
+}
+
+.radio-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.radio-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.radio-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.radio-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+}
